@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 w-full bg-white z-50 shadow-lg">
       <CommonWrapper>
-        <div className="w-full py-4 flex items-center justify-between px-4 md:px-4">
+        <div className="w-full py-4 flex items-center justify-between px-4">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <img src={navLogo} alt="Logo" className="h-8" />
@@ -22,8 +22,8 @@ const Navbar = () => {
             </span>
           </Link>
 
-          {/* Search Box - Only visible on md and up */}
-          <div className="hidden md:block flex-1 max-w-md ml-4 relative">
+          {/* Search Box - Only visible on lg and up */}
+          <div className="hidden lg:block flex-1 max-w-md ml-4 relative">
             <img
               src={searchIcon}
               alt="Search"
@@ -36,24 +36,24 @@ const Navbar = () => {
             />
           </div>
 
-          {/* Desktop Nav + Buttons */}
-          <div className="hidden md:flex gap-x-3 items-center">
+          {/* Desktop Nav + Buttons - Only visible on lg and up */}
+          <div className="hidden lg:flex gap-x-3 items-center">
             {/* Nav Links */}
             <div className="flex gap-4 text-black font-normal text-base">
               <Link
-                to="/"
+                to={"/how-it-works"}
                 className="px-3 py-1 rounded-md hover:text-primary-500 transition-all duration-200"
               >
                 How It Works?
               </Link>
               <Link
-                to="/"
+                to={"/pricing"}
                 className="px-3 py-1 rounded-md hover:text-primary-500 transition-all duration-200"
               >
                 Pricing
               </Link>
               <Link
-                to="/"
+                to={"/security"}
                 className="px-3 py-1 rounded-md hover:text-primary-500 transition-all duration-200"
               >
                 Security
@@ -75,8 +75,8 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Hamburger - Mobile only */}
-          <div className="md:hidden">
+          {/* Hamburger - shown below lg */}
+          <div className="lg:hidden">
             <button onClick={toggleMenu}>
               {menuOpen ? (
                 <X color="black" size={28} />
@@ -87,10 +87,9 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        {/* Mobile Menu */}
+        {/* Mobile/Tablet Menu (for < lg) */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out px-4 ${
+          className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out px-4 ${
             menuOpen
               ? "max-h-96 opacity-100 py-4 shadow-lg bg-white rounded-xl"
               : "max-h-0 opacity-0 py-0"
@@ -100,21 +99,21 @@ const Navbar = () => {
             {/* Nav Links */}
             <div className="flex flex-col gap-3">
               <Link
-                to="/"
+                to={"/how-it-works"}
                 className="hover:text-primary-500 transition-colors duration-200"
                 onClick={() => setMenuOpen(false)}
               >
                 How It Works?
               </Link>
               <Link
-                to="/"
+                to={"/pricing"}
                 className="hover:text-primary-500 transition-colors duration-200"
                 onClick={() => setMenuOpen(false)}
               >
                 Pricing
               </Link>
               <Link
-                to="/"
+                to={"/security"}
                 className="hover:text-primary-500 transition-colors duration-200"
                 onClick={() => setMenuOpen(false)}
               >

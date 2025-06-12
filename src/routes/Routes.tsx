@@ -1,15 +1,15 @@
+import AdminDashboard from "@/pages/Admin/AdminDashboard";
+import Form from "@/pages/Form";
+import HowItWorks from "@/pages/HowItWorks";
+import Login from "@/pages/Login";
+import Pricing from "@/pages/Pricing";
+import Security from "@/pages/Security";
+import Signup from "@/pages/Signup";
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import About from "../pages/About";
-import Contact from "../pages/Contact";
-import NotFound from "../pages/NotFound";
 import Home from "../pages/Home";
+import NotFound from "../pages/NotFound";
 import AdminRoute from "./AdminRoutes";
-import AdminDashboard from "@/pages/Admin/AdminDashboard";
-import Login from "@/pages/Login";
-import Signup from "@/pages/Signup";
-import Form from "@/pages/Form";
-import Services from "@/pages/Services";
 
 const routes = createBrowserRouter([
   {
@@ -21,16 +21,16 @@ const routes = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/about",
-        element: <About />,
+        path: "/how-it-works",
+        element: <HowItWorks />,
       },
       {
-        path: "/contact",
-        element: <Contact />,
+        path: "/pricing",
+        element: <Pricing />,
       },
       {
-        path: "/services",
-        element: <Services />,
+        path: "/security",
+        element: <Security />,
       },
       {
         path: "/form",
